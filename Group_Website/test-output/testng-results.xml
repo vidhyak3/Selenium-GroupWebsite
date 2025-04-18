@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-17T12:04:23Z" name="Default suite" finished-at="2025-04-17T12:04:35Z" duration-ms="12076">
+    <groups>
+    </groups>
+    <test started-at="2025-04-17T12:04:23Z" name="Default test" finished-at="2025-04-17T12:04:35Z" duration-ms="12076">
+      <class name="com.group.Testcases.TestGroupLanding">
+        <test-method is-config="true" signature="startApplication(java.lang.String)[pri:0, instance:com.group.Testcases.TestGroupLanding@3568f9d2]" started-at="2025-04-17T12:04:23Z" name="startApplication" finished-at="2025-04-17T12:04:30Z" duration-ms="7446" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startApplication -->
+        <test-method signature="runGroupLanding()[pri:0, instance:com.group.Testcases.TestGroupLanding@3568f9d2]" started-at="2025-04-17T12:04:30Z" name="runGroupLanding" finished-at="2025-04-17T12:04:34Z" duration-ms="4321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runGroupLanding -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.group.Testcases.TestGroupLanding@3568f9d2]" started-at="2025-04-17T12:04:34Z" name="postCondition" finished-at="2025-04-17T12:04:35Z" duration-ms="274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+      </class> <!-- com.group.Testcases.TestGroupLanding -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

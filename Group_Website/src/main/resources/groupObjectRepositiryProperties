@@ -1,0 +1,11 @@
+#nav bar 
+headerLogo : //img[@alt='Red Bangle']
+menuBtn : //button[@aria-label='toggle menu']
+B2C : //a[text()="B2C Services"]
+B2B : //a[text()="B2B Services"]
+AboutUs : //a[text()="About Us"]
+
+#body section xpath
+BannerHeading : //div[contains(@class,"text-[40px] md:text-[90px]")]
+BannerHeadingVideo : //div[contains(@class,"w-full overflow-hidden")]/video
+videos : //div[contains(@class,"relative w-full")]/video
