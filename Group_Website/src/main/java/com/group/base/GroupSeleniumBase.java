@@ -1,5 +1,6 @@
 package com.group.base;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import org.testng.Assert;
 
 import com.group.Utils.GroupObjectRespositoryProperties;
 import com.group.Utils.LoadGroupProperties;
+import com.group.Utils.ReadGroupExcelData;
 
 public class GroupSeleniumBase {
 	public RemoteWebDriver driver;
@@ -44,9 +46,12 @@ public class GroupSeleniumBase {
 	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
 	}
+	public String[][] readExcelData(String sheetName) throws IOException {
+	    return ReadGroupExcelData.readData(sheetName);
+	}
 	
 	public void validateImageSource(WebElement imageElement, String expectedRelativeSrc, String errorMessage) {
-	    String baseUrl = "https://master.d19hb1gupmwyub.amplifyapp.com"; 
+	    String baseUrl = "https://www.staging.redbangle.com"; 
 	    @SuppressWarnings("deprecation")
 		String actualSrc = imageElement.getAttribute("src").trim();
 
@@ -108,8 +113,9 @@ public class GroupSeleniumBase {
 	    }
 	    return null;
 	}
-	public void validateVideoIsAutoplaying(WebElement videoElement) throws InterruptedException {
+	public void validateVideoIsAutoplaying(WebElement videoElement, String expectedSrc) throws InterruptedException {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
 	    double startTime = (double) js.executeScript("return arguments[0].currentTime;", videoElement);
 	    Thread.sleep(2000); // wait for 2 seconds
 	    double endTime = (double) js.executeScript("return arguments[0].currentTime;", videoElement);
@@ -117,8 +123,15 @@ public class GroupSeleniumBase {
 	    System.out.println("Video start time: " + startTime);
 	    System.out.println("Video end time: " + endTime);
 
-	    Assert.assertTrue(endTime > startTime, "❌ Video is not autoplaying!");
+	    Assert.assertTrue(endTime > startTime, "Video is not autoplaying!");
+
+	    @SuppressWarnings("deprecation")
+		String actualSrc = videoElement.getAttribute("src");
+	    System.out.println("Actual video src: " + actualSrc);
+
+	    Assert.assertEquals(actualSrc, expectedSrc, "Video src doesn't match the expected value!");
 	}
+
 
 
 

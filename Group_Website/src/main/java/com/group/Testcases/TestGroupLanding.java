@@ -9,7 +9,7 @@ public class TestGroupLanding extends GroupSpecificMethods{
 	@Test
 	public void runGroupLanding() throws InterruptedException {
 		GroupLandingPage glp = new GroupLandingPage(driver);
-		glp.HeaderSection().ValidateHeroBannerHeading().VerifyB2BVideo().VerifyB2CVideo();
+		glp.HeaderSection().ValidateHeroBannerHeading().VerifyB2BVideo().VerifyB2CVideo().BrandIconsInMarquee();
 			
 	}
 
